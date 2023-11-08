@@ -1,0 +1,2020 @@
+{
+	"info": {
+		"_postman_id": "29c1f552-00ff-402b-a632-e263803ceab0",
+		"name": "Проект: тестирование API. Яндекс.Прилавок",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26847768"
+	},
+	"item": [
+		{
+			"name": "Доставка - \"Привезем быстро\" POST",
+			"item": [
+				{
+					"name": "Параметр deliveryTime",
+					"item": [
+						{
+							"name": "Позитивные ",
+							"item": [
+								{
+									"name": "Допустимое время доставки (диапозон времени от 07 до 21)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>5.1</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Негативные ",
+							"item": [
+								{
+									"name": "Недопустимое время доставки (01)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>5.1</productsWeight>\n    <deliveryTime>01</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Недопустимое время доставки (00)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>5.1</productsWeight>\n    <deliveryTime>00</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Недопустимое время доставки (06)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>5.1</productsWeight>\n    <deliveryTime>06</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Недопустимое время доставки (22)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>5.1</productsWeight>\n    <deliveryTime>22</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметра deliveryTime строка",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>5.1</productsWeight>\n    <deliveryTime>winter</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр со спец.символами",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>5.1</productsWeight>\n    <deliveryTime>20!</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр пустой ввод ",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>5.1</productsWeight>\n    <deliveryTime></deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Параметр productsCount",
+					"item": [
+						{
+							"name": "Позитивные ",
+							"item": [
+								{
+									"name": "Количество продуктов в заказе (диапазон от 0 до 7)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>2</productsCount>\n    <productsWeight>2.1</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Количество продуктов в заказе (диапазон от 8 до 14)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>14</productsCount>\n    <productsWeight>2.1</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Негативные ",
+							"item": [
+								{
+									"name": "Количество продуктов в заказе (15)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>15</productsCount>\n    <productsWeight>2.1</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Количество продуктов в заказе (20)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>20</productsCount>\n    <productsWeight>2.1</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр productsCount строка",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>winter</productsCount>\n    <productsWeight>2.1</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр со спец.символами ",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>3№</productsCount>\n    <productsWeight>2.1</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр пустой ввод",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount></productsCount>\n    <productsWeight>2.1</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Параметр productsWeight",
+					"item": [
+						{
+							"name": "Позитивные ",
+							"item": [
+								{
+									"name": "Вес продуктов (диапазон от 0 - 2.5 кг)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount></productsCount>\n    <productsWeight>2.1</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Вес продуктов (диапазон от 2.6 - 6 кг)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>5</productsCount>\n    <productsWeight>6</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Негативные ",
+							"item": [
+								{
+									"name": "Параметр строка ",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>5</productsCount>\n    <productsWeight>winter</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр спец.символы ",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>7</productsCount>\n    <productsWeight>6%</productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр пустой ввод",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>7</productsCount>\n    <productsWeight></productsWeight>\n    <deliveryTime>20</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Параметр clientDeliveryCost",
+					"item": [
+						{
+							"name": "Позитивные ",
+							"item": [
+								{
+									"name": "Параметры:  кол-во товара <=7, вес товара <=2.5 кг",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>7</productsCount>\n    <productsWeight>2.5</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметры:  кол-во товара <=7, вес товара <=0 кг",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>7</productsCount>\n    <productsWeight>0</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметры:  кол-во товара <=7, вес товара >6 кг",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>7</productsCount>\n    <productsWeight>7</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметры:  кол-во товара 0, вес товара >6 кг",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>0</productsCount>\n    <productsWeight>7</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметры:  кол-во товара >=8, вес товара >6 кг",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>8</productsCount>\n    <productsWeight>7</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметры:  кол-во товара 15, вес товара 7 кг",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>15</productsCount>\n    <productsWeight>7</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметры:  кол-во товара 15, вес товара 1 кг",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>15</productsCount>\n    <productsWeight>1</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметры:  кол-во товара 0, вес товара 0 кг",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "<InputModel>\n    <productsCount>0</productsCount>\n    <productsWeight>0</productsWeight>\n    <deliveryTime>07</deliveryTime>\n</InputModel>",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Пустой JSON ",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/fast-delivery/v3.1.1/calculate-delivery.xml",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"fast-delivery",
+												"v3.1.1",
+												"calculate-delivery.xml"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Негативные ",
+							"item": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Работа с корзиной ",
+			"item": [
+				{
+					"name": "Параметр ID корзины",
+					"item": [
+						{
+							"name": "Создание пользователя/корзины",
+							"item": [
+								{
+									"name": "Создание корзины авторизованным пользователем ",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 1,\n            \"quantity\": 2\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/api/v1/orders",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Создание корзины неавторизованным пользователем ",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 1,\n            \"quantity\": 2\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{server_address}}/api/v1/orders",
+											"host": [
+												"{{server_address}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Создание пользователя ",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"firstName\": \"Анатолий\",\n    \"phone\": \"+79995553322\",\n    \"address\": \"г. Москва, ул. Пушкина, д. 10\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/users",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Негативные проверки ",
+							"item": [
+								{
+									"name": "Неавторизованный пользователь",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/10",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"10"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Получение списка продуктов с ID = 0 ",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/0",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Валидными данные (ID =11)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/11",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"11"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Невалидные данные (ID =22222)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/22222",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"22222"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметром строка (ID =winter)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/winter",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"winter"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Позитивные проверки  ",
+							"item": [
+								{
+									"name": "Аторизованный пользователь",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Параметр ID продукта ",
+					"item": [
+						{
+							"name": "Позитивные ",
+							"item": [
+								{
+									"name": "Валидный ID продукта (1)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 1,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Валидный ID продукта (113)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 113,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Валидный ID продукта (60)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 60,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Негативные ",
+							"item": [
+								{
+									"name": "Валидный ID продукта (114)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 114,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Валидный ID продукта (0)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 0,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Валидный ID продукта (123)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 123,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ID не указанн ",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Невалидный ID продукта (8%)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 8%,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр строка (ID=winter)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": winter,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Проверка наличия продуктов с ID [1,60,113]",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ids\": [\n        113,\n        60,\n        101,\n        100,\n        1,\n        61\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/warehouses/amount",
+									"protocol": "https",
+									"host": [
+										"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+										"serverhub",
+										"praktikum-services",
+										"ru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"warehouses",
+										"amount"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Параметр quantity",
+					"item": [
+						{
+							"name": "Позитивные ",
+							"item": [
+								{
+									"name": "Валидное количество продуктов (quantity=1)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 101,\n            \"quantity\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Валидное количество продуктов (quantity=12)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 60,\n            \"quantity\": 12\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Негативные ",
+							"item": [
+								{
+									"name": "Валидное количество продуктов (quantity=0)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 101,\n            \"quantity\": 0\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Добавление продуктов в несуществующую корзину (ID=111)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 1,\n            \"quantity\": 2\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/1111",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"1111"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Параметр quantity не указан ",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 1\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Добавление продуктов в корзину со спец.символом (quantity=1%)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 1,\n            \"quantity\": 1%\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Добавление продуктов в корзину с параметром строка (quantity=winter)",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"productsList\": [\n        {\n            \"id\": 1,\n            \"quantity\": winter\n        }\n   ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Добавление продуктов в корзину без указания параметра ID и quantity ",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+											"protocol": "https",
+											"host": [
+												"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+												"serverhub",
+												"praktikum-services",
+												"ru"
+											],
+											"path": [
+												"api",
+												"v1",
+												"orders",
+												"8"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Удаление корзины",
+					"item": [
+						{
+							"name": "Удаление существующей корзины (ID=8)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+									"protocol": "https",
+									"host": [
+										"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+										"serverhub",
+										"praktikum-services",
+										"ru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"orders",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление уже удаленной корзины (ID=8)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "83ceb946-79b8-4104-baf2-d1fa2e683583",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://f8f6f2a3-6659-40b4-b5d8-f90632bffab8.serverhub.praktikum-services.ru/api/v1/orders/8",
+									"protocol": "https",
+									"host": [
+										"f8f6f2a3-6659-40b4-b5d8-f90632bffab8",
+										"serverhub",
+										"praktikum-services",
+										"ru"
+									],
+									"path": [
+										"api",
+										"v1",
+										"orders",
+										"8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
